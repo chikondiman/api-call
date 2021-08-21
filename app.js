@@ -8,10 +8,10 @@ app.listen(3000, function () {
 });
 
 // // moduels
-// var express = require('express');
-// var app = express();
-// var mysql = require('mysql');
-// var bodyParser = require('bodyParser')
+var express = require('express');
+var app = express();
+var mysql = require('mysql');
+var bodyParser = require('bodyParser')
 
 // // 
 // app.use(express.static(__dirname + '/public'));
