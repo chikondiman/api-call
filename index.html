@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-
-
- <table id="tableData" class="table table-fixed">
-<thead>
-  <tr>
-  </tr>
-</thead>
-<tbody class="tbody" >
-</tbody>
-
-
-
+<html>
+    <body>
+        <table>
+          <tr>
+            <th>firstname</th>
+          </tr>
+          <% if(result.length){ 
+            for(var i = 0;i < data.length;i++) { %>
+          <tr>
+            <td><%=result.firstname%></td>
+          </tr>
+           <% }
+          }else{ %>
+          <tr>
+            <td>No user</td>
+          </tr>
+        <% } %>
+        </table>
+    </body>
 </html>
