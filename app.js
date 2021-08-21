@@ -8,10 +8,35 @@ app.listen(3000, function () {
 });
 
 // // moduels
-var express = require('express');
-var app = express();
+
+
 var mysql = require('mysql');
 var bodyParser = require('bodyParser')
+
+$(document).ready(() => {
+
+    $.ajax({
+        url: "http://localhost:9000/list", 
+        method: 'GET',
+        success: function(response){
+            if(response.rows.length > 0){
+                for(let index = 0; index < response.rows.length; index++) {
+                    var newRow = $("<tr>");
+                    var cols = "";
+                    var firstname = '';
+                    var lastname = '';
+                    var gender = '';
+                    cols += '<td> '+ response.rows[index].firstname +'</td>';
+                    cols += '<td> '+ response.rows[index].lastname +'</td>';
+                    cols += '<td> '+ response.rows[index].gender+'</td>';                
+                    newRow.append(cols);
+                    $("#tableData .tbody").append(newRow);
+                }  
+    
+            }
+        }
+    })
+    })
 
 // // 
 // app.use(express.static(__dirname + '/public'));
