@@ -15,5 +15,5 @@ app.get('/getUsers', function(req, res){
 var server = app.listen(8080, function(){
     var host = server.address().address
     var port = server.address().port
-    console.log("REST API demo app listening at http://%s:%s", host, port)
+    console.log("The REST API demo app listening at http://%s:%s", host, port)
 })
