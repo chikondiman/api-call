@@ -1,56 +1,22 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-<style>
-    th{ 
-        color:#fff;
-            }
-</style>
-
-
-<table class="table table-striped">
-    <tr  class="bg-info">
-        <th>First</th>
-        <th>Last</th>
-        <th>Email</th>
-    </tr>
-
-    <tbody id="myTable">
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Define title-->
+        <title>City Search</title>
         
-    </tbody>
-</table>
-
-<script>
-	var myArray = []
-	
-
-	$.ajax({
-		method:'GET',
-		url:'https://reqres.in/api/users',
-		success:function(response){
-			myArray = response.data
-			buildTable(myArray)
-			console.log(myArray)
-		}
-	})
-
-
-
-	function buildTable(data){
-		var table = document.getElementById('myTable')
-
-		for (var i = 0; i < data.length; i++){
-			var row = `<tr>
-      	<td>${data[i].email}</td>
-							<td>${data[i].first_name}</td>
-							<td>${data[i].last_name}</td>
-						
-					  </tr>`
-			table.innerHTML += row
-
-
-		}
-	}
-
-</script>
+        <!--You can load all the css files here -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    
+    <body>
+        <!--HTML content goes here-->
+         <input id="input" type="text"></input>
+         <button id="button">Search</button>
+         <div class="totalCount" id="totalCount"></div>
+         <div class="loader"></div>
+         <table class="table"></table>
+        
+        <!--You can load all the javascript files here-->
+        <script type="text/javascript" src="js/script.js"></script>
+    </body>
+</html>
